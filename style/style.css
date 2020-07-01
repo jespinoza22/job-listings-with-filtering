@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    background-color: hsl(180, 52%, 96%);
+}
+
+header img{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid hsl(180, 29%, 50%);
+}
+
+.content {
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    /* display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 150px; */
+    display: flex;
+    flex-direction: row;
+    padding: 3em 1em;
+    border-radius: 0.6em;
+    /* border: 1px solid red; */
+    width: 60%;
+    margin: 10px auto;
+    align-items: center;
+    font-size: 0.8em;
+    background-color: white;
+    -webkit-box-shadow: 11px 11px 25px -11px rgba(91,164,164,1);
+    -moz-box-shadow: 11px 11px 25px -11px rgba(91,164,164,1);
+    box-shadow: 11px 11px 25px -11px rgba(91,164,164,1);
+    /* border: 1px solid red;
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    align-items: center;
+    background-color: white; */
+}
+
+.card img{
+    width: 70px;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.job-bussiness {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.job-bussiness h4 {
+    margin: 0;
+    color: hsl(180, 29%, 50%);
+}
+
+.new {
+    padding: 0.7em 0.7em 0.4em;
+    border-radius: 1.5em;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: 700;
+    margin-left: 1em;
+}
+
+.featured {
+    padding: 0.7em 0.7em 0.4em;
+    border-radius: 1.5em;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    margin-left: 0.7em;
+}
+
+.job-title {
+    margin: 0;
+    color: black;
+    cursor: pointer;
+    font-size: 1.3em;
+    margin: 0.5em 0;
+}
+
+.job-title:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+.job-details ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.job-details li {
+    list-style: none;
+    padding: 0.2em 0.8em 0.2em 0;
+    color: gray;
+}
+
+/* .skills ul {
+    margin: 0 2em;
+    display: flex;  
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.skills li {
+    list-style: none;
+    padding: 0.7em;
+    position: relative;
+} */
+
+.skills {
+    height: 100%;
+}
+
+.skills a {
+    padding: 0.7em;
+    border-radius: 0.3em;
+    color: hsl(180, 29%, 50%);
+    font-weight: 600;
+    font-size: 0.9em;
+    background-color: hsl(180, 52%, 96%);
+    cursor: pointer;
+}
+
+.skills a:hover {
+    color: white;
+    background-color: hsl(180, 29%, 50%);
+}
+
+
+@media (max-width: 750px) {
+    .card {
+        position: relative;
+        width: 85%;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 3em;
+    }
+
+    .card img{
+        position: absolute;
+        left: 0;
+        top: -20px;
+        width: 50px;
+        height: auto;
+    }
+
+    .job {
+        width: 100%;
+    }
+}
