@@ -14,9 +14,10 @@ header img{
 .content {
     width: 100%;
     height: auto;
+    position: relative;
 }
 
-.card {
+.card, .filter {
     /* display: grid;
     grid-template-columns: 100px 1fr 1fr;
     grid-template-rows: 150px; */
@@ -25,7 +26,7 @@ header img{
     padding: 3em 1em;
     border-radius: 0.6em;
     /* border: 1px solid red; */
-    width: 60%;
+    width: 70%;
     margin: 10px auto;
     align-items: center;
     font-size: 0.8em;
@@ -39,6 +40,11 @@ header img{
     padding: 10px;
     align-items: center;
     background-color: white; */
+}
+
+.filter {
+    justify-content: space-between;    
+    padding: 2em 1em;
 }
 
 .card img{
@@ -108,32 +114,25 @@ header img{
     color: gray;
 }
 
-/* .skills ul {
-    margin: 0 2em;
-    display: flex;  
-    flex-direction: row;
-    justify-content: flex-end;
-    position: relative;
-}
-
-.skills li {
-    list-style: none;
-    padding: 0.7em;
-    position: relative;
-} */
-
 .skills {
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: flex-end;
 }
 
 .skills a {
     padding: 0.7em;
+    margin: 0.5em;
     border-radius: 0.3em;
     color: hsl(180, 29%, 50%);
     font-weight: 600;
     font-size: 0.9em;
     background-color: hsl(180, 52%, 96%);
     cursor: pointer;
+    position: relative;
 }
 
 .skills a:hover {
@@ -141,8 +140,72 @@ header img{
     background-color: hsl(180, 29%, 50%);
 }
 
+.line-job {
+    display: none;
+}
 
-@media (max-width: 750px) {
+.clear a{
+    margin: 1em;
+    color: gray;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.clear a:hover {
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+}
+
+.filters-seacrh {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.text {
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+    border-radius: 0.4em 0 0 0.4em;
+    padding: 0.44em;
+    font-weight: 700;
+}
+
+.image {
+    /* height: 2em; */
+    padding: 5px 5px 2px 5px;
+    background-color: hsl(180, 29%, 50%);
+    border-radius: 0 0.4em 0.4em 0;
+}
+
+.image:hover {
+    background-color: black;
+}
+
+@media (max-width: 780px) {
+
+    .skills {
+        /* justify-content: flex-start; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .skills a {
+        margin-left: 0;
+        max-width: 70px;
+    }
+
+    .filter {
+        width: 85%;
+    }
+
     .card {
         position: relative;
         width: 85%;
@@ -159,7 +222,25 @@ header img{
         height: auto;
     }
 
+    .line-job {
+        display: block;
+        width: 100%;
+        height: 0;
+        margin: 0.8em 0;
+        border-bottom: 1px solid #A0A0A0;
+    }
+
     .job {
         width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .card {
+        width: 85%;
+    }
+
+    .filter {
+        width: 85%;
     }
 }

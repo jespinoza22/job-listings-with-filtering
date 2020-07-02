@@ -9,8 +9,6 @@
   <title>Frontend Mentor | Job Listings</title>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
   <link href="./style/style.css" rel="stylesheet">
-  <script type="text/javascript" src="data.json"></script>
-  <script src="scripts/app.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -22,7 +20,31 @@
     <img src="images/bg-header-desktop.svg" alt="">
   </header>
 <div class="content">
-  <div class="card">
+
+  <div class="filter">
+    <div class="filters-seacrh">
+
+      <!-- <div class="filter-text">
+        <div class="text">Javascript</div>
+        <div class="image"><img src="images/icon-remove.svg" alt=""></div>
+      </div>
+
+      <div class="filter-text">
+        <div class="text">Sass</div>
+        <div class="image"><img src="images/icon-remove.svg" alt=""></div>
+      </div>
+
+      <div class="filter-text">
+        <div class="text">Ruby</div>
+        <div class="image"><img src="images/icon-remove.svg" alt=""></div>
+      </div> -->
+    </div>
+    <div class="clear">
+      <a onclick="clearAll()">Clear</a>
+    </div>
+  </div>
+
+  <!-- <div class="card">
     <img src="images/faceit.svg">
     <div class="job">
       <div class="job-bussiness">
@@ -39,6 +61,7 @@
           <li>Full Time</li>
           <li>USA only</li>
         </ul>
+        <div class="line-job"></div>
       </div>
     </div>
     <div class="skills">
@@ -48,71 +71,15 @@
         <a>Sass</a>
         <a>Ruby</a>
     </div>
-  </div>
+  </div> -->
 </div>
 
-<div class="content">
-  <div class="card">
-    <img src="images/faceit.svg">
-    <div class="job">
-      <div class="job-bussiness">
-        <h4 class="bussiness">Photosnap</h4>
-        <a href="" class="new">New!</a>
-        <a href="" class="featured">Featured</a>
-      </div>
-      <h2 class="job-title">
-        Senior Frontend Developer
-      </h2>
-      <div class="job-details">
-        <ul>
-          <li>1d ago</li>
-          <li>Full Time</li>
-          <li>USA only</li>
-        </ul>
-      </div>
-    </div>
-    <div class="skills">
-        <a>Fullstack</a>
-        <a>Midweight</a>
-        <a>JavaScript</a>
-        <a>Sass</a>
-        <a>Ruby</a>
-    </div>
-  </div>
-</div>
-
-<div class="content">
-  <div class="card">
-    <img src="images/faceit.svg">
-    <div class="job">
-      <div class="job-bussiness">
-        <h4 class="bussiness">Photosnap</h4>
-        <a href="" class="new">New!</a>
-        <a href="" class="featured">Featured</a>
-      </div>
-      <h2 class="job-title">
-        Senior Frontend Developer
-      </h2>
-      <div class="job-details">
-        <ul>
-          <li>1d ago</li>
-          <li>Full Time</li>
-          <li>USA only</li>
-        </ul>
-      </div>
-    </div>
-    <div class="skills">
-        <a>Fullstack</a>
-        <a>Midweight</a>
-        <a>JavaScript</a>
-        <a>Sass</a>
-        <a>Ruby</a>
-    </div>
-  </div>
 </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">JEspinoza</a>.
   </div>
 </body>
+<script type="text/javascript" src="data.json"></script>
+<script src="scripts/app.js"></script>
 </html>
