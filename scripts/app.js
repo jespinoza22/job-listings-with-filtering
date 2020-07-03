@@ -110,7 +110,6 @@ function addFilter(obj, tag){
             });  
         } 
     }    
-    console.log(filters);
     //call
     callFilter();
 }
