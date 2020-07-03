@@ -24,15 +24,15 @@ loadJSON(function(response) {
 
 
 //initial load html
-
 const tagNew = `<a href="" class="new">New!</a>`;
 const tagFeatured = `<a href="" class="featured">Featured</a>`;
-const elementContent = document.querySelector('.content');
+const elementContent = document.querySelector('.cards');
 const elementFilter = document.querySelector('.filters-seacrh');
+const filterEl = document.querySelector('.filter');
 
 
 function loadHTML(json){
-    // elementContent.innerHTML = '';
+    elementContent.innerHTML = '';
     json.forEach(element => {
         let htmlCard = `<div class="card">
                             <img src="LOGO">
@@ -90,27 +90,20 @@ function loadHTML(json){
         htmlCard = htmlCard.replace('TAG_SKILLS', skillDetails); 
         elementContent.insertAdjacentHTML('beforeend', htmlCard);
     });
-
-    // const articleImgs = document.querySelectorAll('.skills a');
-    // articleImgs.forEach(elemnt => {
-    //     elemnt.addEventListener("click", addFilter);
-    // })
 }
 
 function addFilter(obj, tag){
     const skillFilter = obj.innerHTML;
 
     if (filters.length === 0) {
-        // filters.push(skillFilter);  
         filters.push({
             value: skillFilter,
             tag
         });  
     }
     else {
-        const findLen = filters.findIndex(el => el === skillFilter);
+        const findLen = filters.findIndex(el => el.value === skillFilter);
         if (findLen === -1) {
-            // filters.push(skillFilter); 
             filters.push({
                 value: skillFilter,
                 tag
@@ -134,6 +127,8 @@ function clearAll(){
 
 function callFilter(){
     elementFilter.innerHTML = '';
+    filterEl.style.display = "none";
+    elementContent.classList.remove("relative-cards");
     if (filters.length !== 0){
         filters.forEach(x => {
             let filter = `<div class="filter-text">
@@ -142,25 +137,40 @@ function callFilter(){
                         </div>`;  
             elementFilter.insertAdjacentHTML('beforeend', filter);        
         }); 
-        callFilterJSON();
+        filterEl.style.display = "flex";
+        elementContent.classList.add("relative-cards");
     }
+    callFilterJSON();
 }
 
 
 function callFilterJSON(){
     if (filters.length === 0){
-        // loadHTML(jsonFileConstant);
+        loadHTML(jsonFileConstant);
         return;
     }  
-    
-    // jsonFile = jsonFileConstant.forEach(element => {
-
-    //     filters.forEach(a => {
-    //         if (a === element.role) {
-    //             console.log(element, 'element');
-    //             return element;
-    //         }
-    //     });
-    // });
-    // console.log(jsonFile, 'jsonFile');
+    let newJsonFile = jsonFileConstant;
+    filters.forEach(obj => {
+        if (obj.tag === 'role') {
+            newJsonFile = newJsonFile.filter(json => json.role === obj.value);
+        }
+        if (obj.tag === 'level') {
+            newJsonFile = newJsonFile.filter(json => json.level === obj.value);
+        }
+        if (obj.tag === 'language') {
+            newJsonFile = newJsonFile.filter(json => {
+                if (json.languages.length > 0){
+                    if (json.languages.includes(obj.value)) return json;
+                }
+            });
+        }
+        if (obj.tag === 'tool') {
+            newJsonFile = newJsonFile.filter(json => {
+                if (json.tools.length > 0) {
+                    if (json.tools.includes(obj.value)) return json;
+                }
+            });
+        }
+    });
+    loadHTML(newJsonFile);
 }
