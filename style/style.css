@@ -226,6 +226,11 @@ header img{
         width: 85%;
     }
 
+    .filters-seacrh {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+
     .card {
         position: relative;
         width: 85%;
@@ -263,10 +268,20 @@ header img{
     .filter {
         width: 85%;
     }
+
+    .filters-seacrh {   
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
 }
 
 @media (max-width: 375px) {
     header img {
         background-image: url("../images/bg-header-mobile.svg");
+    }
+
+    .filters-seacrh {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
     }
 }
